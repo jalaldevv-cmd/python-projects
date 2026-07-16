@@ -1,11 +1,11 @@
 PYTHON DATA PROJECTS
 
-A collection of Python projects to built to develop the foundational skills as I work toward much more advanced projects. 
+A collection of Python projects built to develop my foundational skills as I work toward much more advanced projects. 
 
-Learning Progress:
+Current Skills:
 Web Scraping - Finished
-APIs - Ongoing
-SQLite - Coming Soon
+APIs - Finished
+SQLite - Soon
 
 PROJECTS
 Books Scraper
@@ -21,9 +21,15 @@ Quotes Scraper
 - saves the extracted data to a CSV file
 
 Weather API
-- retrieves current weather data from the open-mateo API
+- retrieves current weather data from the Open-meteo API
 - extracts the temperature, humidity, and wind speed
 - saves the weather data to a CSV file
+
+Pokemon API
+- asks the user fora Pokemon name
+- retrieves the Pokemon data from the PokeAPI
+- extracts its name, height, weight, base experience, and first ability
+- saves the data to a CSV file
 
 Technologies
 - Python
@@ -31,3 +37,4 @@ Technologies
 - Beautiful Soup
 - JSON
 - CSV
+- REST APIs
