@@ -1,21 +1,24 @@
 # PYTHON DATA PROJECTS
 
-A collection of Python projects built to develop my foundational skills as I work toward much more advanced projects. 
-
+A collection of Python projects built to develop my skills in web scraping, APIs, databases, data analysis.
 
 ## FEATURED PROJECTS
-
-### Paginated Books Scraper
-- scrapes book info across multiple pages
-- saves the collected prices to a CSV file
 
 ### Product Price Tracker
 - tracks product prices from APIs
 - stores historical data using SQLite
+- compares current and previous prices
+
+### Paginated Books Scraper
+- scrapes book information across multiple pages
+- collects title, price, availability, and rating
+- saves the collected data to a CSV file
 
 ### Sales Report
 - uses Pandas to analyze sales data
-- generates a summary report
+- calculates total sales and revenue
+- identifies the best-selling and highest-revenue products
+- generates a summary CSV report
 
 ## OTHER PROJECTS
 - Country Scraper
