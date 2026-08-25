@@ -1,6 +1,6 @@
 # PYTHON DATA PROJECTS
 
-A collection of Python projects built to develop my skills in web scraping, APIs, databases, data analysis.
+A collection of Python projects built to develop my skills in web scraping, browser automation, APIs, databases, and data analysis.
 
 ## FEATURED PROJECTS
 
@@ -31,4 +31,5 @@ A collection of Python projects built to develop my skills in web scraping, APIs
 - Weather API
 - Password Generator
 - Book Scraper
+- Dynamic Product Scraper
   
