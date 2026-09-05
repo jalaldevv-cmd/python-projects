@@ -1,30 +1,8 @@
-import os
-
-import psycopg
-from dotenv import load_dotenv
+from database import get_connection
+from models import Product
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-
-load_dotenv()
 
 app = FastAPI()
-
-DB_PASSWORD = os.getenv("DB_PASSWORD")
-
-
-class Product(BaseModel):
-    name: str
-    price: float
-
-
-def get_connection():
-    return psycopg.connect(
-        host="localhost",
-        port=5432,
-        dbname="products_db",
-        user="postgres",
-        password=DB_PASSWORD,
-    )
 
 
 @app.get("/products")
@@ -118,6 +96,7 @@ def delete_product(product_id: int):
         raise HTTPException(status_code=404, detail="Product not found")
     return {"message": f"Product #{product_id} successfully deleted"}
 
+
 @app.put("/products/{product_id}")
 def update_product(product_id: int, updated_product: Product):
     connection = get_connection()
@@ -135,7 +114,7 @@ def update_product(product_id: int, updated_product: Product):
     update_checker = cursor.rowcount
 
     connection.commit()
-    
+
     cursor.close()
     connection.close()
 
