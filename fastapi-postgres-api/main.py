@@ -4,6 +4,9 @@ from fastapi import FastAPI, HTTPException
 
 app = FastAPI()
 
+@app.get("/debug/routes")
+def debug_routes():
+    return [route.path for route in app.routes]
 
 @app.get("/products")
 def get_products():
