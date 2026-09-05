@@ -4,4 +4,4 @@ app = FastAPI()
 
 @app.get("/")
 def root():
-    return {"message": {"API is deployed!"}}
+    return {"message": {"Deployment update worked!"}}
