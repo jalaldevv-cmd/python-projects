@@ -7,6 +7,24 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_DB: test_products_db
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: testpassword
+        ports:
+          - 5432:5432
+
+    env:
+      ENV_FILE: .env.test
+      DB_HOST: localhost
+      DB_PORT: 5432
+      DB_NAME: test_products_db
+      DB_USER: postgres
+      DB_PASSWORD: testpassword
+
     steps:
       - uses: actions/checkout@v4
 
@@ -17,6 +35,11 @@ jobs:
       - name: Install dependencies
         working-directory: fastapi-postgres-api
         run: pip install -r requirements.txt
+
+      - name: Create test table
+        working-directory: fastapi-postgres-api
+        run: |
+          python -c "import psycopg; conn = psycopg.connect(host='localhost', port=5432, dbname='test_products_db', user='postgres', password='testpassword'); conn.execute('CREATE TABLE products (id SERIAL PRIMARY KEY, name TEXT NOT NULL, price REAL NOT NULL)'); conn.commit(); conn.close()"
 
       - name: Run tests
         working-directory: fastapi-postgres-api
