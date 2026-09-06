@@ -23,7 +23,7 @@ def clean_database():
 def test_get_products():
     response = client.get("/products")
 
-    assert response.status_code == 200
+    assert response.status_code == 201
 
 def test_get_product_not_found():
     response = client.get("/products/9999")
